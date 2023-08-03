@@ -9,10 +9,10 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav id="navbar" class="navbar">
         <img src="./assets/svgs/logo.svg" alt="Logo" />
 
-        <div  id="link" class="link">
+        <div id="link" class="link">
           <ul class="center_link">
             <li>COLLECTION</li>
             <li>STORE COLLECTION</li>
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div class="hamburger"onclick="toggleHambuger()" >
+        <div class="hamburger" onclick="toggleHambugger()">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
@@ -64,6 +64,7 @@
             name="tabset"
             id="tab1"
             value="All"
+            onclick="renderProducts(products);"
             checked
           />
           <label for="tab1">All</label>
@@ -73,25 +74,26 @@
             name="tabset"
             id="tab2"
             value="Male"
+            onclick="filterGender('male');"
           />
           <label for="tab2">Men</label>
           <!-- Tab 3 -->
-          <input type="radio" name="tabset" id="tab3" value="Female" />
+          <input type="radio" name="tabset" id="tab3" value="Female" onclick="filterGender('female');"/>
           <label for="tab3">Female</label>
 
            <!-- Tab 3 -->
-           <input type="radio" name="tabset" id="tab4" value="Babies" />
+           <input type="radio" name="tabset" id="tab4" value="Babies" onclick="filterGender('babies');"/>
            <label for="tab4">Babies</label>
 
 
           <div class="search_set">
             <img src="https://www.svgrepo.com/show/13682/search.svg" alt="" />
-            <input type="text" class="search_product" placeholder="Search" />
+            <input type="text" class="search_product" placeholder="Search" onchange="search(this.value);" />
           </div>
           <div class="tab-panels">
             <!-- TAB1 -->
             <section id="marzen" class="tab-panel">
-              <div class="card_row">
+              <div id="product_container" class="card_row">
                 <div class="percard catalogue">
                   <a href="#">
                   <img
@@ -370,6 +372,7 @@
           </div>
         </ul>
       </div>
+
 
       <div class="foot">
         <h5>© InstinctHub Techsavvy Limited &nbsp;<span id="copyrightYear">2022</span></h5>
